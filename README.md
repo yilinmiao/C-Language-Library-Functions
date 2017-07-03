@@ -7,8 +7,8 @@ My implementation of some of the Standard C Library functions including some add
 ### What's in it?
 
 1.  **Libc Functions:** Some of the standard C functions
-2.  **Additional functions:** Functions 42 deems will be useful for later projects
-3.  **Bonus Functions:** Functions 42 deems will be useful for linked list manipulation
+2.  **Additional functions:** Functions are useful
+3.  **Bonus Functions:** Functions for linked list manipulation
 
 Libc functions | Additional functions | Bonus Functions 
 :----------- | :-----------: | :-----------: 
@@ -42,7 +42,7 @@ tolower		|
 
 ### How does it work?
 
-The goal is to create a library called libft.a from the source files so I can later use that library from other projects at 42.
+The goal is to create a library called libft.a from the source files.
 
 To create that library, after downloading/cloning this project, **cd** into the project, copy all the files from the sub folders to the root directory and finally, call make:
 
@@ -56,4 +56,4 @@ You should see a *libft.a* file and some object files (.o).
 
 Now to clean up (removing the .o files and the .c files from the root), call `make clean`
 
-**WARNING:** `make clean` will delete all your files from your root directory. Do not run it if you're using the `Makefile` file. This is why I added the `Makefile-sample` file.
+**WARNING:** `make clean` will delete all your files from your root directory. Do not run it if you're using the `Makefile` file.
