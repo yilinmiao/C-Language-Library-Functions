@@ -49,13 +49,13 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
-int				ft_strncmp(const char *s1, const char *s2, size_t len);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char			*ft_strdup(const char *s1);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strncat(char *dst, const char *src, size_t len);
 char			*ft_strstr(const char *big, const char *little);
-char			*ft_strnstr(const char *s1, const char *s2, size_t n);
+char			*ft_strnstr(const char *big, const char *little, size_t len)；
 char			*ft_strtrim(char const *str);
 char			*ft_strchr(const char *str, int c);
 char			*ft_strrchr(const char *str, int c);
@@ -100,7 +100,7 @@ char			*ft_itoa(int n);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-long			ft_atoi(const char *str);
+int				ft_atoi(const char *str);
 void			ft_swap(int *a, int *b);
 float			ft_sqrt(float x);
 float			ft_invsqrt(float x);

@@ -10,29 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	itn;
-	char	*it1;
-	char	*it2;
+	size_t	temp_len;
+	char	*temp_big;
+	char	*temp_little;
 
 	if (!*small)
 		return ((void *)big);
-	while (n-- && *big)
+	while (len-- && *big)
 	{
 		if (*big == *small)
 		{
-			itn = n;
-			it1 = (void *)big + 1;
-			it2 = (void *)small + 1;
-			while (itn-- && *it1 && *it2 && *it1 == *it2)
+			temp_len = len;
+			temp_big = (void *)big + 1;
+			temp_little = (void *)small + 1;
+			while (temp_len-- && *temp_big && *temp_little && *temp_big == *temp_little)
 			{
-				++it1;
-				++it2;
+				++temp_big;
+				++temp_little;
 			}
-			if (!*it2)
+			if (!*temp_little)
 				return ((void *)big);
 		}
 		big++;
