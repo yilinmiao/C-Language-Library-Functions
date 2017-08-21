@@ -21,7 +21,7 @@
 # include <wchar.h>
 
 void			ft_bzero(void *s, size_t n);
-void			ft_memdel(void **a_ptr);
+void			ft_memdel(void **ap);
 
 void			*ft_memset(void *b, int c, size_t len);
 void			*ft_memmove(void *dst, const void *src, size_t len);
