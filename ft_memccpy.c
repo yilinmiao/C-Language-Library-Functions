@@ -23,13 +23,10 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		*strdst++ = *strsrc++;
 	}
-	if ( n >= 0)
+	if (n >= 0)
 	{
 		*strdst++ = *strsrc++;
 		return ((void*)strdst);
 	}
-	else
-	{
-		return NULL;
-	}
+	return (NULL);
 }
