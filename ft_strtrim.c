@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s)
 	char			*str;
 	unsigned int	i;
 
-	str = ft_stralloc(s);
+	str = malloc(ft_strlen(s) + 1);
 	if (str)
 	{
 		i = 0;

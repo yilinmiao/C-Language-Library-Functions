@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_get_digit_len.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 18:29:42 by ymiao             #+#    #+#             */
-/*   Updated: 2017/07/05 18:29:45 by ymiao            ###   ########.fr       */
+/*   Created: 2017/09/08 17:13:34 by ymiao             #+#    #+#             */
+/*   Updated: 2017/09/08 17:13:35 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strcpy(char *dst, const char *src)
+int	ft_get_digit_len(int n)
 {
-	unsigned int		i;
+	int		count;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	count = 1;
+	while (n /= 10)
+		count++;
+	return (count);
 }

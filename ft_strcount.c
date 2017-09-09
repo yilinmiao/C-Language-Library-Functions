@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 18:29:42 by ymiao             #+#    #+#             */
-/*   Updated: 2017/07/05 18:29:45 by ymiao            ###   ########.fr       */
+/*   Created: 2017/09/08 17:07:41 by ymiao             #+#    #+#             */
+/*   Updated: 2017/09/08 17:07:42 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strcpy(char *dst, const char *src)
+unsigned int	ft_strcount(char *s, char c)
 {
-	unsigned int		i;
+	unsigned int	count;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	if (!*s)
+		return (0);
+	count = 0;
+	if (*s != c)
+		++count;
+	while (*++s)
+		if (*s == c && *(s - 1) != c)
+			count++;
+	return (count);
 }

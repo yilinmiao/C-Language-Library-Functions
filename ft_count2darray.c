@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_count2darray.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 18:29:42 by ymiao             #+#    #+#             */
-/*   Updated: 2017/07/05 18:29:45 by ymiao            ###   ########.fr       */
+/*   Created: 2017/09/08 17:50:11 by ymiao             #+#    #+#             */
+/*   Updated: 2017/09/08 17:50:13 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+int		ft_count2darray(char **arr)
 {
-	unsigned int		i;
+	int		i;
+	int		count;
 
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	i = -1;
+	count = 0;
+	while (arr[++i])
+		count++;
+	return (count);
 }

@@ -10,23 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static size_t	get_len(int n)
-{
-	size_t		i;
-
-	i = 1;
-	while (n /= 10)
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char			*ft_itoa(int n)
 {
 	char			*str;
-	size_t			len;
+	int				len;
 	unsigned int	temp;
 
-	len = get_len(n);
+	len = ft_get_digit_len(n);
 	temp = n;
 	if (n < 0)
 	{

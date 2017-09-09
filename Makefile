@@ -1,22 +1,21 @@
 NAME = libft.a
 
-CFLAGS += -Wall -Wextra -Werror -Iinclude/
+SRC = ft_*.c
 
-SRCS = *.c
+HEADER = *.h
 
-OBJS = $(SRCS:.c=.o)
-
-RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) -rcs $(NAME) $?
+$(NAME):
+	gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEADER) 
+	ar rc $(NAME) *.o
+	ranlib $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	/bin/rm -f *.o
 
 fclean: clean
-	$(RM) $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all

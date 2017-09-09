@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_get_word_len.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 18:29:42 by ymiao             #+#    #+#             */
-/*   Updated: 2017/07/05 18:29:45 by ymiao            ###   ########.fr       */
+/*   Created: 2017/09/08 17:30:56 by ymiao             #+#    #+#             */
+/*   Updated: 2017/09/08 17:30:58 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strcpy(char *dst, const char *src)
+int	ft_get_word_len(char const *str, char c)
 {
-	unsigned int		i;
+	int	i;
+	int	len;
 
 	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
+	len = 0;
+	while (str[i] == c)
 		i++;
+	while (str[i] != c && str[i] != '\0')
+	{
+		i++;
+		len++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (len);
 }

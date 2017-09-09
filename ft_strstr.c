@@ -10,23 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strstr(const char *big, const char *little)
 {
-	const char *s1;
-	const char *s2;
+	const char *big_it;
+	const char *little_it;
 
 	if (*little == '\0')
 		return ((char*)big);
-	while (*s1 != '\0')
+	while (*big != '\0')
 	{
-		s1 = big;
-		s2 = little;
-		while (*s2 != '\0' && *s1 == *s2)
+		big_it = big;
+		little_it = little;
+		while (*little_it != '\0' && *big_it == *little_it)
 		{
-			s1++;
-			s2++;
+			big_it++;
+			little_it++;
 		}
-		if (*s2 == '\0')
+		if (*little_it == '\0')
 			return ((char*)big);
 		big++;
 	}

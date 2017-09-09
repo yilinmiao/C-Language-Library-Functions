@@ -14,19 +14,21 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	char	*strdst;
-	char	*strsrc;
+	char *strsrc;
+	char *strdst;
 
-	strdst = (char*)dst;
 	strsrc = (char*)src;
-	while (--n >= 0 && *strsrc != c)
+	strdst = (char*)dst;
+	while (n > 0 && *strsrc != c)
 	{
+		n--;
 		*strdst++ = *strsrc++;
 	}
-	if (n >= 0)
+	if (n > 0)
 	{
 		*strdst++ = *strsrc++;
 		return ((void*)strdst);
 	}
-	return (NULL);
+	else
+		return (NULL);
 }

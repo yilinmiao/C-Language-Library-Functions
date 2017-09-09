@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-char	*ft_strnew_str(char const *s, unsigned int start, size_t l)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char	*new_str;
 	size_t	i;
 
-	new_str = ft_strnew(l);
+	new_str = ft_strnew(len);
 	if (!new_str)
 		return (NULL);
 	s = s + start;
 	i = 0;
-	while (i < l)
+	while (i < len)
 	{
 		new_str[i] = s[i];
 		i++;

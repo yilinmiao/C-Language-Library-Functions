@@ -1,27 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/05 18:29:42 by ymiao             #+#    #+#             */
-/*   Updated: 2017/07/05 18:29:45 by ymiao            ###   ########.fr       */
+/*   Created: 2017/09/08 17:04:42 by ymiao             #+#    #+#             */
+/*   Updated: 2017/09/08 17:04:44 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strcpy(char *dst, const char *src)
+int	ft_isspace(int c)
 {
-	unsigned int		i;
-
-	i = 0;
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	return (c == '\t' || c == '\n' || c == '\v' ||
+	c == '\f' || c == '\r' || c == ' ');
 }
