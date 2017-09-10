@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/20 23:10:19 by ymiao             #+#    #+#             */
-/*   Updated: 2017/08/20 23:10:20 by ymiao            ###   ########.fr       */
+/*   Created: 2017/07/09 21:39:32 by ymiao             #+#    #+#             */
+/*   Updated: 2017/07/09 21:39:33 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strrchr(const char *s, int c)
 {
-	ft_memdel((void**)as);
+	int		i;
+
+	i = 0;
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i--] == (char)c)
+			return ((char*)(s + i + 1));
+	}
+	return (NULL);
 }

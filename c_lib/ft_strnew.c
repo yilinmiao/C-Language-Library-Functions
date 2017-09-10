@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/09 21:39:32 by ymiao             #+#    #+#             */
-/*   Updated: 2017/07/09 21:39:33 by ymiao            ###   ########.fr       */
+/*   Created: 2017/08/20 22:50:26 by ymiao             #+#    #+#             */
+/*   Updated: 2017/08/20 22:50:27 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnew(size_t size)
 {
-	char	*last;
+	char	*str;
+	size_t	i;
 
-	while (1)
+	str = (char*)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i <= size)
 	{
-		if (*s == c)
-			last = (char *)s;
-		if (*s++ == '\0')
-			return (last);
+		str[i] = '\0';
+		i++;
 	}
+	return (str);
 }

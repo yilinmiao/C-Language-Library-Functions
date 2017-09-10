@@ -12,13 +12,15 @@
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
-	int	total;
-	int	sign;
+	int					sign;
+	int					i;
+	unsigned long long	total;
 
 	sign = 1;
 	total = 0;
+	i = 0;
 	while (ft_isspace(*str))
 		++str;
 	if (!ft_isdigit(*str))
@@ -28,8 +30,11 @@ int	ft_atoi(const char *str)
 		else if (*str != '+')
 			return (0);
 		str++;
+		i++;
 	}
 	while (ft_isdigit(*str))
-		total = total * 10 + (*str++ - '0') * sign;
-	return (total);
+		total = total * 10 + (*str++ - '0');
+	if (total > 9223372036854775807 || i >= 19)
+		return (sign == -1 ? 0 : -1);
+	return (total * sign);
 }

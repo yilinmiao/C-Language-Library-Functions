@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ymiao <ymiao@student.42.us.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/20 22:50:26 by ymiao             #+#    #+#             */
-/*   Updated: 2017/08/20 22:50:27 by ymiao            ###   ########.fr       */
+/*   Created: 2017/07/29 20:43:51 by ymiao             #+#    #+#             */
+/*   Updated: 2017/07/29 20:43:52 by ymiao            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_memdel(void **ap)
 {
-	return (char *)ft_memalloc(size);
+	if (!ap)
+		return ;
+	free(*ap);
+	*ap = NULL;
 }
