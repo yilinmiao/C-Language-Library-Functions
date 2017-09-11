@@ -17,10 +17,10 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*root;
 	t_list	*cur;
 
+	if (!lst || !f)
+		return (NULL);
 	root = f(lst);
 	cur = root;
-	if (root == NULL)
-		return (NULL);
 	while (lst->next)
 	{
 		lst = lst->next;

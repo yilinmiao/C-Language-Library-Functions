@@ -12,29 +12,38 @@
 
 #include "libft.h"
 
+static char		*helper(char *dst, const char *src, char c)
+{
+	while (*src && *src != c)
+		*dst++ = *src++;
+	*dst = c;
+	return (dst);
+}
+
+static char		*get_element(const char **s, char c)
+{
+	char	*str;
+
+	str = (char *)malloc(ft_get_word_len(*s, c) + 1);
+	if (!str)
+		return (NULL);
+	*s = helper(str, *s, c);
+	return (str);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	**str2;
+	char			**tab;
 
-	if (!s || !(str2 = (char **)malloc(sizeof(*str2) *
-		(ft_strcount((char*)s, c) + 1))))
+	tab = (char **)malloc(ft_strcount((char*)s, c) + 1);
+	if (!tab)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (i++ < ft_strcount((char*)s, c))
+	while (*s)
 	{
-		k = 0;
-		if (!(str2[i] = ft_strnew(ft_get_word_len(&s[j], c) + 1)))
-			str2[i] = NULL;
-		while (s[j] == c)
-			j++;
-		while (s[j] != c && s[j])
-			str2[i][k++] = s[j++];
-		str2[i][k] = '\0';
+		if (*s != c)
+			*tab++ = get_element(&s, c);
+		s++;
 	}
-	str2[i] = 0;
-	return (str2);
+	*tab = NULL;
+	return (tab);
 }

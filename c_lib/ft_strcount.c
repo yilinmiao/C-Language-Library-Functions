@@ -18,7 +18,7 @@ unsigned int	ft_strcount(char *s, char c)
 		return (0);
 	count = 0;
 	if (*s != c)
-		++count;
+		count++;
 	while (*++s)
 		if (*s == c && *(s - 1) != c)
 			count++;
