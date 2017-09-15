@@ -12,38 +12,54 @@
 
 #include "libft.h"
 
-static char		*helper(char *dst, const char *src, char c)
+int		get_word(char const *s, char c)
 {
-	while (*src && *src != c)
-		*dst++ = *src++;
-	*dst = c;
-	return (dst);
+	int		i;
+	int		num;
+	int		mark;
+
+	i = 0;
+	num = 0;
+	mark = 1;
+	while (s[i])
+	{
+		if (s[i] == c)
+			mark = 1;
+		if (s[i] != c && mark == 1)
+		{
+			mark = 0;
+			num++;
+		}
+		i++;
+	}
+	return (num);
 }
 
-static char		*get_element(const char **s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	char	*str;
+	char	**str;
+	int		n_word;
+	int		i;
+	int		j;
 
-	str = (char *)malloc(ft_get_word_len(*s, c) + 1);
+	if (!s)
+		return (NULL);
+	n_word = get_word(s, c);
+	str = (char**)malloc(sizeof(char*) * (n_word + 1));
 	if (!str)
 		return (NULL);
-	*s = helper(str, *s, c);
-	return (str);
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	char			**tab;
-
-	tab = (char **)malloc(ft_strcount((char*)s, c) + 1);
-	if (!tab)
-		return (NULL);
-	while (*s)
+	str[n_word] = 0;
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		if (*s != c)
-			*tab++ = get_element(&s, c);
-		s++;
+		if (s[i++] != c)
+		{
+			str[j] = ft_strnew(ft_get_word_len(&s[i - 1], c) + 1);
+			ft_strncpy(str[j], &s[i - 1], ft_get_word_len(&s[i - 1], c));
+			i = i - 1 + ft_get_word_len(&s[i - 1], c);
+			j++;
+		}
 	}
-	*tab = NULL;
-	return (tab);
+	return (str);
 }
