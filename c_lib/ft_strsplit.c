@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		get_word(char const *s, char c)
+static int		get_word(char const *s, char c)
 {
 	int		i;
 	int		num;
