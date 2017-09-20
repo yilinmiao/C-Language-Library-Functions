@@ -48,13 +48,3 @@ To create that library, after downloading/cloning this project, **cd** into the 
 
 	git clone https://github.com/yilinmiao/C-Language-Library-Functions
 	cd C-Language-Library-Functions
-	make copy
-	make
-
-You should see a *libft.a* file and some object files (.o).
-
-
-Now to clean up (removing the .o files and the .c files from the root), call `make clean`
-
-**WARNING:** `make clean` will delete all your files from your root directory. Do not run it if you're using the `Makefile` file.
-# Tetris
